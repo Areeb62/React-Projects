@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <Slideshow />
-      < IconsWithText />
+      <IconsWithText />
       <Products />
     </>
   )
