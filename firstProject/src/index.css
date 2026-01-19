@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+.swiper-wrapper {
+    padding-block: 30px;
+}

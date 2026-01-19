@@ -4,11 +4,11 @@ import zoro from '../assets/images/zoro.jpg'
 
 function Header() {
     return (
-        <header className='bg-white w-full py-3.75 sticky top-0 z-50'>
+        <header className='bg-white w-full py-3.75 sticky top-0 z-50 border-b border-b-gray-200'>
             <div className='flex max-w-7xl px-8 mx-auto items-center'>
                 <div className='flex items-center flex-1'>
                     <a className='flex items-center gap-2' href="/">
-                        <img className='w-8 h-8 rounded-2xl bg-transparent' src={zoro} alt="" />
+                        <img className='w-8 h-8 rounded-2xl bg-transparent' src={zoro} alt="" fetchPriority='high' loading='lazy'/>
                         <p>First Project</p>
                     </a>
                 </div>
