@@ -1,16 +1,17 @@
 import { useState } from 'react'
 import './App.css'
-import Slideshow from './components/Slideshow'
-import IconsWithText from './components/IconsWithText'
-import Products from './components/Products'
+import Home from './components/Home/Home'
+import { Outlet } from 'react-router'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 function App() {
 
   return (
     <>
-      <Slideshow />
-      <IconsWithText />
-      <Products />
+      <Header />
+      <Outlet />
+      <Footer />
     </>
   )
 }

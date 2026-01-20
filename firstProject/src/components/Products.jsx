@@ -21,11 +21,12 @@ function Products() {
 
     return (
         <section className='bg-[#F9FAFB] py-16'>
+            <div className='max-w-7xl px-8 mx-auto'>
             <div className='text-center mb-12'>
                 <h2 className='text-4xl font-bold mb-4'>Featured Products</h2>
                 <p className='text-gray-600 text-lg'>Discover our handpicked selection of the latest and greatest tech products</p>
             </div>
-            <Swiper className='max-w-7xl px-8 mx-auto'
+            <Swiper 
                 slidesPerView={3}
                 slidesPerGroup={3}
                 grid={{
@@ -45,6 +46,7 @@ function Products() {
                     </SwiperSlide>
                 ))}
             </Swiper>
+            </div>
         </section>
     )
 }

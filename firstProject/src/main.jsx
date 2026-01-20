@@ -2,13 +2,23 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
-import Header from './components/Header.jsx'
-import Footer from './components/Footer.jsx'
+import { createBrowserRouter, RouterProvider, createRoutesFromElements, Route } from 'react-router'
+import Home from './components/Home/Home.jsx'
+import About from './components/About/About.jsx'
+import ProductGrid from './components/ProductGrid/ProductGrid.jsx'
+import Contact from './components/Contact/Contact.jsx'
 
+
+const router = createBrowserRouter(createRoutesFromElements(
+  <Route path="/" element={<App />}>
+    <Route path="/" element={<Home />} />
+    <Route path="/shop" element={<ProductGrid />} />
+    <Route path="/about" element={<About />} />
+    <Route path="/contact" element={<Contact />} />
+  </Route>
+))
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Header />
-    <App />
-    <Footer />
+    <RouterProvider router={router} />
   </StrictMode>,
 )
