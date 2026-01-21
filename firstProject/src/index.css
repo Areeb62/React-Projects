@@ -3,3 +3,7 @@
 .swiper-wrapper {
     padding-block: 30px;
 }
+
+.filter-category-btn {
+    scrollbar-width: none;
+}
