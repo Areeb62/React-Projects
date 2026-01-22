@@ -1,11 +1,12 @@
 import React from 'react'
-import { ShoppingCart, Star, StarIcon, StarOffIcon } from 'lucide-react'
+import { ShoppingCart, Star } from 'lucide-react'
+import { Link } from 'react-router'
 
-function ProductCard({product}) {
+function ProductCard({ product, id }) {
     return (
         <>
             <div className='relative overflow-hidden'>
-                <a href="">
+                <Link to={`/product/${id}`}>
                     <img
                         src={product.images[0]}
                         className={product.images.length > 1 ? "opacity-100 group-hover:opacity-0" : "transition-all duration-300 group-hover:scale-110"}
@@ -20,8 +21,8 @@ function ProductCard({product}) {
                             fetchPriority='low' loading='lazy'
                         />
                     )}
-                </a>
-                <p className='absolute capitalize top-0 right-0 bg-blue-600 p-2 rounded-3xl text-white text-sm'>{product.category}</p>
+                </Link>
+                <span className='absolute capitalize top-0 right-0 bg-blue-600 px-3 py-1 rounded-full text-white text-xs'>{product.category}</span>
             </div>
             <div className='flex flex-col gap-4'>
                 <h3 className='text-lg font-semibold'>{product.title}</h3>
@@ -33,7 +34,7 @@ function ProductCard({product}) {
                 </p>
                 <div className='flex justify-between'>
                     <p className='text-2xl font-bold'>${product.price}</p>
-                    <a href='' className='inline-flex font-semibold items-center bg-blue-600 hover:bg-blue-700 transition-colors py-2 px-4 rounded-xl text-white gap-2'><ShoppingCart className='w-4 h-4'/> Add</a>
+                    <a href='' className='inline-flex font-semibold items-center bg-blue-600 hover:bg-blue-700 transition-colors py-2 px-4 rounded-xl text-white gap-2'><ShoppingCart className='w-4 h-4' /> Add</a>
                 </div>
             </div>
         </>
